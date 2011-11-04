@@ -1,8 +1,19 @@
 #!/usr/bin/python
+__author__ = "Bruno Nery"
+__email__ = "brunonery@brunonery.com"
+
 from sys import argv
 
+HELP = """Merge two PLY files consisting of point clouds.
+
+Usage:
+  merge_ply_point_clouds.py <file1.ply> <file2.ply> > <output.ply>
+"""
+
 if __name__ == '__main__':
-    if len(argv) == 3:
+    if len(argv) != 3:
+        print HELP
+    else:
         first_file = open(argv[1], 'r')
         first_lines = first_file.readlines()
         first_file.close()
